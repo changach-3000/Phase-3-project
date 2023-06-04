@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #93a7ef;
+    background-color: #d9e0f9;
 }
 .nav-link{
     position: relative;
@@ -24,3 +24,118 @@
     bottom: 0;
     left: 0;
 }
+
+/* beginning of hero section styling */
+.hero-section{
+    background-color: #d9e0f9;
+}
+.lead{
+    font-size: 40pt;
+}
+#hero{
+    font-weight: bolder;
+    color: #1e284b;
+}
+#featured-3 p{
+    font-size: 11pt;
+}
+#title1{
+    font-weight: lighter;
+    font-size: 13pt;
+    color:#004D20;
+}
+#home-text{
+    font-size: 9pt;
+    font-weight: lighter;
+}
+
+/* end of hero section styling */
+
+/* blob */
+.blob {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 184, 255, 0.42)), to(#5c9df1));
+    background-image: linear-gradient(180deg, rgba(47, 184, 255, 0.42), #578fd7);
+    mix-blend-mode:overlay;
+    -webkit-animation: move 15s linear infinite alternate;
+            animation: move 15s linear infinite alternate;
+  }
+  
+@-webkit-keyframes move {
+    0% {
+      -webkit-transform: translate(-400px, -100px) rotate(-90deg);
+              transform: translate(-400px, -100px) rotate(-90deg);
+      border-radius: 24% 76% 35% 65% / 76% 24% 33% 67%;
+    }
+    100% {
+      -webkit-transform: translate(400px, 100px) rotate(-10deg);
+              transform: translate(400px, 100px) rotate(-10deg);
+      border-radius: 76% 24% 33% 67% / 24% 76% 35% 65%;
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      -webkit-transform: translate(-400px, -100px) rotate(-90deg);
+              transform: translate(-400px, -100px) rotate(-90deg);
+      border-radius: 24% 76% 35% 65% / 76% 24% 33% 67%;
+    }
+    100% {
+      -webkit-transform: translate(400px, 100px) rotate(-10deg);
+              transform: translate(400px, 100px) rotate(-10deg);
+      border-radius: 76% 24% 33% 67% / 24% 76% 35% 65%;
+    }
+  }
+
+  /* Services styling */
+ #main-title{
+  color: #004D20;
+
+  }
+  #main-title1{
+    color: #d9e0f9;
+  }
+
+  /* start of Counter styling */
+  #counter {    
+    color:#005A25;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 50px 0;
+}
+#counter .count {
+    padding: 10px;
+    color: #005A25;
+    text-align: center;
+}
+.count h4 {
+    color: #005A25;
+    font-size: 16px;
+    font-weight: lighter;
+    margin-top: 0;
+}
+#counter .count .fa {
+    font-size: 40px;
+    display: block;
+    color: #005A25;
+}
+#counter .number {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .pricing-items {
+        padding-top: 0;
+    }
+    .pricing-item.active {
+        top: 20px;
+        margin-bottom: 40px;
+    }
+}
+ /* end of Counter styling */
+
