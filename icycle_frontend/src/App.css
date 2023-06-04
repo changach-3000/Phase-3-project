@@ -1,0 +1,26 @@
+.navbar{
+    background-color: #93a7ef;
+}
+.nav-link{
+    position: relative;
+    color: white;
+    font-size: 12pt;
+    font-weight: lighter;
+}
+.nav-link:hover{
+    color: rgb(7, 105, 7);
+}
+.nav-link::after{
+    opacity: 0;
+    transition: all 0.2s;
+}
+.nav-link:hover::after{
+    content: " ";
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(7, 105, 7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
