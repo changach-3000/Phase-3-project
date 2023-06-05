@@ -1,5 +1,8 @@
 # runs application
 require_relative "./config/environment"
 
-run ApplicationController
+
 use PostController
+use SessionController
+use UserController
+run ApplicationController

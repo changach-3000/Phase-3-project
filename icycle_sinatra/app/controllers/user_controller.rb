@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class UserController < ApplicationController
     
     # ----------------------------GET Users-------------------------------
     get "/users" do 
@@ -8,7 +8,7 @@ class PostController < ApplicationController
             {:user => user}.json()
 
         else
-            message = {:error => "Not Logged in"}
+            message = {:error => "User not logged in"}
             message.to_json() 
         end
         users = User.all
@@ -24,8 +24,8 @@ class PostController < ApplicationController
     
             if(_username.present? &&  _email.present? && _password.present?)
                    
-               check_username = User.exists?(username: _username)#true / false
-               check_email = User.exists?(email: _email)#true / false
+               check_username = User.exists?(username: _username)
+               check_email = User.exists?(email: _email)
     
                puts check_username
                if check_username==true
@@ -54,4 +54,20 @@ class PostController < ApplicationController
                 message.to_json()
             end
         end
+
+             # ----------------------------Get Current User-------------------------------
+
+            get "/currentuser" do
+                user = User.find_by(id: session[:user_id])
+
+                if user
+                    {:user => user}.to_json()
+                else
+                    message = {:error=> "Not logged in"}
+                    message.to_json()
+                
+                end
+        
+            end
+    
 end
