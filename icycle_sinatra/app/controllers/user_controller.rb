@@ -64,9 +64,36 @@ class UserController < ApplicationController
                 else
                     message = {:error=> "Not logged in"}
                     message.to_json()
-                
                 end
         
             end
+
+ # ----------------------------Edit User details-------------------------------
+ patch "/users/edituser/:id" do
+    username = params[:username]
+    email = params[:email]
+                  
+    if username.present? && email.present?
+      user_find = User.find_by(id: params[:id])
+  
+      if user_find
+        if user_find.update(username: username, email: email)
+          message = { success: "Details updated" }
+          return message.to_json()
+        else
+          message = { error: "Could not update details" }
+          return message.to_json()
+        end
+      else
+        status 404
+        message = { error: "User not found" }
+        return message.to_json()
+      end
+    else
+      status 400
+      message = { error: "All fields are required" }
+      return message.to_json()
+    end
+  end
     
 end

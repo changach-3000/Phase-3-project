@@ -50,30 +50,26 @@ class PostController < ApplicationController
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
-       
-       
-
-        if(title.present? &&  description.present? && distance.present? && time.present? && image_url.present?)
-            # check if post exists
+      
+            if title.present? && description.present? && distance.present? && time.present? && image_url.present?
             post_find = Post.find_by(id: params[:id])
-
-            # update the specific post
-            post = post_find.update(title: title , description: description, distance: distance, time: time, image_url: image_url)
-
-            if post 
-                message = {:success => "updated successfully"}
-                message.to_json()
-
-            else
-                message = {:error => "could not update"}
-                message.to_json()
+            
+                if post_find
+                    if post_find.update(title: title, description: description, distance: distance, time: time, image_url: image_url)
+                    message = { success: "updated successfully" }
+                    return message.to_json()
+                    else
+                    message = { error: "could not update" }
+                    return message.to_json()
+                    end
+                else
+                    message = { error: "Post not found" }
+                    return message.to_json()
+                end
+                else
+                message = { error: "All fields are required" }
+                return message.to_json()
             end
-
-        else
-            message = {:error => "All fields are required"}
-            message.to_json()
-        end
-
     end
 
      # ----------------------------DELETE POSTS-------------------------------
