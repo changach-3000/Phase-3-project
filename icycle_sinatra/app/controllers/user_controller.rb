@@ -27,7 +27,6 @@ class UserController < ApplicationController
                check_username = User.exists?(username: _username)
                check_email = User.exists?(email: _email)
     
-               puts check_username
                if check_username==true
                     status 406
                     message = {:error=> "Username exists in our database"}
