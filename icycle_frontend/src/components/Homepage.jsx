@@ -1,5 +1,6 @@
 import React from 'react'
 import Counter from './Counter'
+import { NavLink } from 'react-router-dom'
 
 
 function Homepage() {
@@ -15,8 +16,8 @@ function Homepage() {
       <div class="col-lg-6">
         <p class="lead fw-lighter">Get the  <span id='hero'>Best</span>Cycling Experience!</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">Sign Up</button>
-          <button type="button" class="btn btn-outline-success btn-lg px-4">Log In</button>
+         <NavLink to="register" > <button to="register" type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">Sign Up</button></NavLink>
+          <NavLink to="login"><button type="button" class="btn btn-outline-success btn-lg px-4">Log In </button></NavLink>
         </div>
       </div>
     </div>
@@ -35,19 +36,19 @@ function Homepage() {
         <p id='main-content'>iCYCLE offers a full range of services for cycling enthusiasts in offering route options and connecting with fellow cyclists </p>
       </div>
       <div class="col-md-3">
-        <h2 class="fw-bold"  id='main-title1'>Routing Options</h2>
+        <h2 class="fw-lighter"  id='main-title1'>Routing Options</h2>
         <p id='main-content'>Provides a wide range of route options for users including route descriptions as well as approximate distances, time and the level of difficulty </p>
         
       </div>
 
       <div class="col-md-3">
-        <h2 class="fw-bold" id='main-title1'>Community</h2>
+        <h2 class="fw-lighter" id='main-title1'>Community</h2>
         <p id='main-content'>We offer a sense of community for cyclists where users can interact through posts and see each other's progress and also view route reviews</p>
         
       </div>
 
       <div class="col-md-3" >
-        <h2 class="fw-bold" id='main-title1'>Tracking</h2>
+        <h2 class="fw-lighter" id='main-title1'>Tracking</h2>
         <p id='main-content'>Users will be able to keep track of their routes and the distances they have been able to cover</p>
         
       </div>

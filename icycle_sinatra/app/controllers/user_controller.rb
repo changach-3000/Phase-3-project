@@ -14,7 +14,7 @@ class UserController < ApplicationController
         users = User.all
         users.to_json()
     end
-    
+
     # ----------------------------Add Users-------------------------------
         post "/users/adduser" do
             _username=params[:username]

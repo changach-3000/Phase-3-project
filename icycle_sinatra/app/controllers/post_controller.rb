@@ -2,19 +2,27 @@ class PostController < ApplicationController
     
     # ----------------------------GET POSTS-------------------------------
     get "/posts" do 
-        posts = Post.all
-        posts.to_json() 
+        posts = Post.all()
+        posts.to_json(include: :user) 
+    end
+
+    get "/posts/:id" do 
+        post = Post.find_by(id: params[:id])
+        post.to_json()
     end
 
     # ----------------------------ADD POSTS-------------------------------
     post "/posts/addpost" do
+
+        authorize
        
         title = params[:title]
         description = params[:description]
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
-        user_id = params[:user_id]
+        user_id=params[:user_id]
+        
        
         if(title.present? &&  description.present? && distance.present? && time.present? && image_url.present? && user_id.present?)
 
@@ -25,7 +33,7 @@ class PostController < ApplicationController
                 message.to_json
             
             else
-                post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url , user_id: user_id )
+                post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url,user_id: user_id)
                 if post
                     message = {:success=> "Post created successfully"}
                     message.to_json
@@ -45,11 +53,14 @@ class PostController < ApplicationController
 
      # ----------------------------EDIT POSTS-------------------------------
     patch "/posts/editpost/:id" do
+        authorize
+
         title = params[:title]
         description = params[:description]
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
+        
       
             if title.present? && description.present? && distance.present? && time.present? && image_url.present?
             post_find = Post.find_by(id: params[:id])
@@ -74,6 +85,8 @@ class PostController < ApplicationController
 
      # ----------------------------DELETE POSTS-------------------------------
      delete "/posts/delete/:id" do
+        authorize
+
         check_post = Post.exists?(id: params[:id])
       
         if check_post

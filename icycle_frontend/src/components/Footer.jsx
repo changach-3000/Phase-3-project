@@ -10,18 +10,18 @@ function Footer() {
         <div className="col-lg-4 col-md-6 footer-links ">
           <h4>About Us</h4>
           <ul>
-            <li><i class="chevron right icon"></i><a href="#">Fund Scholarships</a></li>
-            <li><i className="chevron right icon"></i> <a href="#">Causes</a></li>
-            <li><i className="chevron right icon"></i> <a href="#">Log In</a></li>
-            <li><i className="chevron right icon"></i> <a href="#">Sign Up</a></li>
+            <li><i class="chevron right icon"></i><a href="#">Number of Routes</a></li>
+            <li><i className="chevron right icon"></i> <a href="#">Cyclists Signed up</a></li>
+            <li><i className="chevron right icon"></i> <a href="#">Average Distances covered</a></li>
+            <li><i className="chevron right icon"></i> <a href="#">Average time cycled</a></li>
           </ul>
         </div>
         <div className="col-lg-4 col-md-6 footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><i className="chevron right icon"></i> <NavLink to='child protection policy'>Child Protection Policy</NavLink></li>
-            <li><i className="chevron right icon"></i> <NavLink to ='privacy policy'>Privacy Policy</NavLink></li>
-            <li><i className="chevron right icon"></i> <NavLink to ='terms and conditions'>Terms & Conditions</NavLink></li>
+            <li><i className="chevron right icon"></i> <NavLink to='child protection policy'>Routing Options</NavLink></li>
+            <li><i className="chevron right icon"></i> <NavLink to ='privacy policy'>Community</NavLink></li>
+            <li><i className="chevron right icon"></i> <NavLink to ='terms and conditions'>Tracking progress</NavLink></li>
           </ul>
         </div>
        

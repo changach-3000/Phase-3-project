@@ -1,0 +1,1 @@
+User.create(username:"Admin", email: "admin@example.com", password: "admin", is_admin: true)

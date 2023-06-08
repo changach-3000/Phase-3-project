@@ -8,6 +8,7 @@ class RouteController < ApplicationController
 
     # ----------------------------ADD ROUTES-------------------------------
     post "/routes/addroute" do 
+       authorize
 
         name = params[:name]
         description = params[:description]
@@ -17,20 +18,21 @@ class RouteController < ApplicationController
        
        if(name.present? && description.present? && distance.present? && time.present? && level_of_difficulty.present?)
 
-                route = Route.create(name: name, description: description, distance: distance, time: time, level_of_difficulty: level_of_difficulty)
-                if route
-                    message = {:success=> "Route has been created"}
-                    message.to_json
-                else
-                    status 406
-                    message = {:error=> "Error while creating route"}
-                    message.to_json
-                end
+                            route = Route.create(name: name, description: description, distance: distance, time: time, level_of_difficulty: level_of_difficulty)
+                            if route
+                                message = {:success=> "Route has been created"}
+                                message.to_json
+                            else
+                                status 406
+                                message = {:error=> "Error while creating route"}
+                                message.to_json
+                            end
 
-        else
+         else
             status 406
             message = {:error=> "All field are required"}
             message.to_json
+                         
         end
     
     end
@@ -38,6 +40,8 @@ class RouteController < ApplicationController
      # ----------------------------EDIT ROUTES-------------------------------
 
      patch "/routes/editroute/:id" do
+        authorize
+
         name = params[:name]
         description = params[:description]
         distance = params[:distance]
@@ -69,6 +73,8 @@ class RouteController < ApplicationController
 
       # ----------------------------DELETE ROUTES-------------------------------
       delete "/routes/delete/:id" do
+        authorize
+
         check_route = Route.exists?(id: params[:id])
       
         if check_route
