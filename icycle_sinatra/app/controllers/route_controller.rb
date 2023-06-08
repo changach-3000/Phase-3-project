@@ -3,12 +3,13 @@ class RouteController < ApplicationController
     # ----------------------------GET ROUTES-------------------------------
     get "/routes" do 
         routes = Route.all
-        routes.to_json() 
+        routes.to_json( ) 
     end
 
     # ----------------------------ADD ROUTES-------------------------------
     post "/routes/addroute" do 
        authorize
+       authorize_admin
 
         name = params[:name]
         description = params[:description]
@@ -17,6 +18,8 @@ class RouteController < ApplicationController
         level_of_difficulty = params[:level_of_difficulty]
        
        if(name.present? && description.present? && distance.present? && time.present? && level_of_difficulty.present?)
+
+       
 
                             route = Route.create(name: name, description: description, distance: distance, time: time, level_of_difficulty: level_of_difficulty)
                             if route

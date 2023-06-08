@@ -10,11 +10,11 @@ function AddPost() {
   const [distance, setDistance] = useState('');
   const [time, setTime] = useState('');
   const [image_url, setImageUrl] = useState('');
-  const[user_id, setUserId] = useState('')
+  
 
   function handleAddPost(e) {
     e.preventDefault();
-    addPost(title, description, distance, time, image_url,user_id);
+    addPost(title, description, distance, time, image_url);
   }
 
   return (
@@ -52,10 +52,6 @@ function AddPost() {
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Share an image</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" onChange={(e) => setImageUrl(e.target.value)}></input>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">User id</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" onChange={(e) => setUserId(e.target.value)}></input>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

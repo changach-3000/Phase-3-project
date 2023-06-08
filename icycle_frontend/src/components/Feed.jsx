@@ -31,8 +31,6 @@ function Feed() {
                       <p className='me-2'>Distance: {post.distance}</p>
                       <p>Time: {post.time}</p>
                       </div>
-                      
-                      <p className='text-body-secondary'>Last Updated: {post.updated_at}</p>
                       <p className='text-body-secondary'>Created By: {post.user.username}</p>
                       {
                         currentuser && currentuser.username === post.user.username?

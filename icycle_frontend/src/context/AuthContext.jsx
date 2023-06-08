@@ -24,7 +24,7 @@ export function AuthProvider({children}){
              }else if(response.success)
              {
             alert(response.success)
-            nav('/')
+            nav('/feed')
             window.location.reload()
              }
             
@@ -46,7 +46,7 @@ export function AuthProvider({children}){
              }else if(response.success)
              {
             alert(response.success)
-            nav('/feed')
+            nav('/')
             window.location.reload()
              }
             

@@ -13,43 +13,30 @@ class PostController < ApplicationController
 
     # ----------------------------ADD POSTS-------------------------------
     post "/posts/addpost" do
-
+        
         authorize
-       
+      
         title = params[:title]
         description = params[:description]
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
-        user_id=params[:user_id]
-        
-       
-        if(title.present? &&  description.present? && distance.present? && time.present? && image_url.present? && user_id.present?)
-
-            check_user = User.exists?(id: user_id)
-            if check_user===false
-                status 406
-                message = {:error=> "User trying to add post does not exist!"}
-                message.to_json
-            
-            else
-                post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url,user_id: user_id)
-                if post
-                    message = {:success=> "Post created successfully"}
-                    message.to_json
-                else
-                    status 406
-                    message = {:error=> "Error saving the post"}
-                    message.to_json
-                end
-
-            end
-        else
+      
+        if title && description && distance && time && image_url
+          post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url)
+          
+          if post.save
+            status 200
+            { success: "Post created successfully" }.to_json
+          else
             status 406
-            message = {:error=> "All field are required"}
-            message.to_json
+            { error: "Error saving the post" }.to_json
+          end
+        else
+          status 406
+          { error: "All fields are required" }.to_json
         end
-    end
+      end
 
      # ----------------------------EDIT POSTS-------------------------------
     patch "/posts/editpost/:id" do

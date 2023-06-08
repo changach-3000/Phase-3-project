@@ -10,11 +10,11 @@ export function PostProvider({children}){
   const [posts ,setPosts] = useState()
   const [singlepost, setSinglepost] = useState(" ")
 
-  function addPost(title, description,distance,time,image_url,user_id){
+  function addPost(title, description,distance,time,image_url){
     fetch("/posts/addpost",{
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
-        body: JSON.stringify({title, description,distance,time,image_url,user_id})
+        body: JSON.stringify({title, description,distance,time,image_url})
     })
     .then(res => res.json())
     .then((data) =>{
@@ -24,9 +24,8 @@ export function PostProvider({children}){
             window.location.reload()
         }else if(data.error){
             alert(data.error)
-        }else{
-            alert("All fields are required")
         }
+
     })
     
   }

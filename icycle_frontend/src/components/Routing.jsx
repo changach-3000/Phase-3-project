@@ -17,9 +17,9 @@ function Routing() {
   <div className='row'>
   {
           routes && routes.map((route)=>( 
-            <div class="card-deck overflow-hidden mb-4 border" style={{"max-width": "540px;"}}>
+            <div class="card-deck overflow-hidden mb-4 border rounded-4" style={{"max-width": "540px;"}}>
               <div class="row g-5">
-                <div class="col-md-3 "style={{ "background-color": "#004D20"}}>
+                <div class="col-md-1 "style={{ "background-color": "#004D20"}}>
                  
                 </div>
                 <div class="col-md-8">
@@ -42,9 +42,7 @@ function Routing() {
                      
                   </div>
                 </div>
-                <div class="col-md-1"style={{ "background-color": "#d9e0f9" }}>
-                 
-                </div>
+               
               </div>
             </div>
 
