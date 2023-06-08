@@ -33,7 +33,7 @@ function Feed() {
                       </div>
                       <p className='text-body-secondary'>Created By: {post.user.username}</p>
                       {
-                        currentuser && currentuser.username === post.user.username?
+                        currentuser && currentuser.id === post.user_id ?
                         <>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <NavLink to={`editpost/{$id}`}><button type="button" class="btn btn-outline-warning">Edit</button></NavLink>

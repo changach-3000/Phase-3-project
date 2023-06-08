@@ -13,7 +13,7 @@ class PostController < ApplicationController
 
     # ----------------------------ADD POSTS-------------------------------
     post "/posts/addpost" do
-        
+
         authorize
       
         title = params[:title]
@@ -21,9 +21,12 @@ class PostController < ApplicationController
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
+        user_id = session[:user_id]
       
         if title && description && distance && time && image_url
-          post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url)
+
+
+          post = Post.create(title: title, description: description, distance: distance, time: time, image_url: image_url,user_id: user_id)
           
           if post.save
             status 200
@@ -47,8 +50,8 @@ class PostController < ApplicationController
         distance = params[:distance]
         time = params[:time]
         image_url = params[:image_url]
+       
         
-      
             if title.present? && description.present? && distance.present? && time.present? && image_url.present?
             post_find = Post.find_by(id: params[:id])
             
@@ -88,6 +91,5 @@ class PostController < ApplicationController
           message.to_json()
         end
       end
-
 
 end

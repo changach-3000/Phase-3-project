@@ -3,7 +3,6 @@ import { RouteContext } from '../context/RouteContext'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 
-
 function Routing() {
   const {routes}= useContext(RouteContext)
   const {handleDelete} = useContext(RouteContext)
@@ -31,15 +30,12 @@ function Routing() {
                       <p className="me-3">Time: {route.time}</p>
                       <p>Level Of Difficulty: {route.level_of_difficulty}</p>
                       </div>
-                      {currentuser && currentuser.is_admin === route.is_admin == true ?
-                        <>
+                     
                          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button type="button" class="btn btn-outline-warning">Edit</button>
                         <button type="button" class="btn btn-outline-danger" onClick={()=>{handleDelete(route.id)}}>Delete </button>
                         </div>   
-                        </>:" "
-                      }             
-                     
+                                 
                   </div>
                 </div>
                

@@ -3,9 +3,8 @@ class RouteController < ApplicationController
     # ----------------------------GET ROUTES-------------------------------
     get "/routes" do 
         routes = Route.all
-        routes.to_json( ) 
+        routes.to_json( include: :user) 
     end
-
     # ----------------------------ADD ROUTES-------------------------------
     post "/routes/addroute" do 
        authorize
@@ -16,10 +15,8 @@ class RouteController < ApplicationController
         distance = params[:distance]
         time = params[:time]
         level_of_difficulty = params[:level_of_difficulty]
-       
+        
        if(name.present? && description.present? && distance.present? && time.present? && level_of_difficulty.present?)
-
-       
 
                             route = Route.create(name: name, description: description, distance: distance, time: time, level_of_difficulty: level_of_difficulty)
                             if route
@@ -37,9 +34,7 @@ class RouteController < ApplicationController
             message.to_json
                          
         end
-    
     end
-
      # ----------------------------EDIT ROUTES-------------------------------
 
      patch "/routes/editroute/:id" do
@@ -52,6 +47,7 @@ class RouteController < ApplicationController
         level_of_difficulty = params[:level_of_difficulty]
        
         if(name.present? && description.present? && distance.present? && time.present? && level_of_difficulty.present?)
+
             # check if post exists
             route_find = Route.find_by(id: params[:id])
 
