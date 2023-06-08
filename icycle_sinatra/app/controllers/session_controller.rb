@@ -24,9 +24,8 @@ class SessionController < ApplicationController
 
     # logging out
     post "/auth/logout" do
-        session.delete :user_id
+        session.clear 
 
-        status 204
         message = {:success => "Logged out"}
         message.to_json()
     end

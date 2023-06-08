@@ -24,8 +24,10 @@ export function AuthProvider({children}){
              }else if(response.success)
              {
             alert(response.success)
+            nav('/')
+            window.location.reload()
              }
-             nav('feed')
+            
         })
        
     }
@@ -44,8 +46,10 @@ export function AuthProvider({children}){
              }else if(response.success)
              {
             alert(response.success)
+            nav('/feed')
+            window.location.reload()
              }
-             nav('/')
+            
         })
     }
 
@@ -57,10 +61,9 @@ export function AuthProvider({children}){
         })
         .then(res=>res.json())
         .then(response => {
-            if(response.success){
                 alert(response.success)
-            }
-            nav("/login")
+            
+              nav("/")
               setCurrentUser()
               setonChange(!onChange)
         })

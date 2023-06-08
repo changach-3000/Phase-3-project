@@ -5,6 +5,7 @@ import { AuthContext } from '../context/AuthContext'
 function Navigation() {
 
   const {currentuser,logout}= useContext(AuthContext)
+
   return (
   <div>
   <nav className="navbar navbar-expand-lg">
@@ -26,9 +27,13 @@ function Navigation() {
           <li className="nav-item">
             <Link to="addpost" className="nav-link active" >Add Post</Link>
           </li>
+
+            
           <li className="nav-item">
             <Link to="addroute" className="nav-link active" >Add Route</Link>
           </li>
+    
+
           <li className="nav-item dropdown">
             <Link to="/profile" className="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Profile

@@ -12,7 +12,7 @@ import { RouteProvider } from './context/RouteContext';
 import { PostProvider } from './context/PostProvider';
 import AddPost from './components/AddPost';
 import AddRoute from './components/AddRoute';
-import SinglePost from './components/SinglePost';
+import EditPost from './components/EditPost';
 
 
 
@@ -27,8 +27,9 @@ function App() {
           <Route path='/' element={<RootLayout/>}>
             <Route index element={<Homepage />}/>
             <Route path='feed' element={<Feed />}>
-            <Route path='post/:id' element={<SinglePost/>}/>
+            <Route path='editpost/:id' element={<EditPost/>}></Route>
             </Route>
+            
             <Route path="addpost" element={<AddPost/>}/>
             <Route path='routes' element={<Routing />}/>
             <Route path='addroute' element={<AddRoute/>}/>

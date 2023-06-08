@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { RouteContext } from '../context/RouteContext'
 import { NavLink } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 
 
 function Routing() {
   const {routes}= useContext(RouteContext)
   const {handleDelete} = useContext(RouteContext)
+  const {currentuser}= useContext(AuthContext)
 
   return (
     <>
@@ -15,7 +17,7 @@ function Routing() {
   <div className='row'>
   {
           routes && routes.map((route)=>( 
-            <div class="card-deck overflow-hidden mb-4 py-2 border" style={{"max-width": "540px;"}}>
+            <div class="card-deck overflow-hidden mb-4 border" style={{"max-width": "540px;"}}>
               <div class="row g-5">
                 <div class="col-md-3 "style={{ "background-color": "#004D20"}}>
                  
@@ -29,10 +31,15 @@ function Routing() {
                       <p className="me-3">Time: {route.time}</p>
                       <p>Level Of Difficulty: {route.level_of_difficulty}</p>
                       </div>
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                      {currentuser && currentuser.is_admin === route.is_admin == true ?
+                        <>
+                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button type="button" class="btn btn-outline-warning">Edit</button>
                         <button type="button" class="btn btn-outline-danger" onClick={()=>{handleDelete(route.id)}}>Delete </button>
                         </div>   
+                        </>:" "
+                      }             
+                     
                   </div>
                 </div>
                 <div class="col-md-1"style={{ "background-color": "#d9e0f9" }}>

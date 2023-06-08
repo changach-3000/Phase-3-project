@@ -1,0 +1,399 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "iCYCLE",
+    "dateExported": "2023-06-08T09:58:04.803Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0acbf6ec-5824-4703-a7e5-fe1b08fc758b",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Get posts",
+            "url": "http://127.0.0.1:9292/posts/8",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-04T12:00:38.014Z",
+            "modified": "2023-06-07T12:16:30.240Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5112139c-e6b9-42ba-b69e-ed14fe339bb5",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Get Single Post",
+            "url": "http://127.0.0.1:9292/posts/5",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-06-07T11:48:04.016Z",
+            "modified": "2023-06-07T11:54:55.437Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "42b149af-51d5-4145-9459-c4e505c854fb",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Add post",
+            "url": "http://127.0.0.1:9292/posts/addpost",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-04T12:04:34.921Z",
+            "modified": "2023-06-06T06:22:35.598Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Ngong Hills"
+                    },
+                    {
+                        "name": "description",
+                        "value": "I had the best time ever at this hike, was super amazing"
+                    },
+                    {
+                        "name": "distance",
+                        "value": "32km"
+                    },
+                    {
+                        "name": "time",
+                        "value": "5 hrs"
+                    },
+                    {
+                        "name": "image_url",
+                        "value": "https://www.heroescomicbooks.com/images/new-releases.jpg"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "5"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f18ff3f0-1053-4754-8e8c-444b98e6614f",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Edit post",
+            "url": "http://127.0.0.1:9292/posts/editpost/8",
+            "method": "PATCH",
+            "sortNum": 25000,
+            "created": "2023-06-05T20:02:29.220Z",
+            "modified": "2023-06-07T12:18:35.562Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Ngong Hills trek"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Super amazing time, The views we to die for!!"
+                    },
+                    {
+                        "name": "distance",
+                        "value": "14km"
+                    },
+                    {
+                        "name": "time",
+                        "value": "2 hrs"
+                    },
+                    {
+                        "name": "image_url",
+                        "value": "https://images.unsplash.com/photo-1610552050890-fe99536c2615?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1507&q=80"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ddc4d788-5f7e-4a25-b91f-b4bfb62f2626",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Delete post",
+            "url": "http://127.0.0.1:9292/posts/delete/6",
+            "method": "DELETE",
+            "sortNum": 27500,
+            "created": "2023-06-05T20:13:16.062Z",
+            "modified": "2023-06-05T20:33:13.312Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de822f8d-c749-4271-9229-801aafb797eb",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Get users",
+            "url": "http://127.0.0.1:9292/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-04T12:43:22.642Z",
+            "modified": "2023-06-05T07:49:43.811Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "feef742b-f3a4-47a7-af11-4d7502a61e8c",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Add User",
+            "url": "http://127.0.0.1:9292/users/adduser",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-04T12:43:39.566Z",
+            "modified": "2023-06-06T06:20:42.489Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "Kelvin"
+                    },
+                    {
+                        "name": "email",
+                        "value": "kelvin@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "4321"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "93953437-c388-4bb4-b5e1-77b01fc4d46e",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Edit User",
+            "url": "http://127.0.0.1:9292/users/edituser/5",
+            "method": "PATCH",
+            "sortNum": 45000,
+            "created": "2023-06-06T10:19:55.199Z",
+            "modified": "2023-06-06T14:48:16.502Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "Kelvin32"
+                    },
+                    {
+                        "name": "email",
+                        "value": "kelvin32@gmail.com"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f3962ba5-080c-4134-85da-0392d9cee613",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "User Login",
+            "url": "http://127.0.0.1:9292/auth/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-05T08:55:21.742Z",
+            "modified": "2023-06-06T06:21:28.703Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "Kelvin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "4321"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "dfb4acd0-fb11-4f54-9f9c-e192a63ffcd7",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "User Logout",
+            "url": "http://127.0.0.1:9292/auth/logout",
+            "method": "POST",
+            "sortNum": 55000,
+            "created": "2023-06-05T13:51:45.281Z",
+            "modified": "2023-06-05T13:57:34.552Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "479bc54d-be9b-4d75-a3e7-7dda9e15c2ef",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Current User",
+            "url": "http://127.0.0.1:9292/currentuser",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-06-05T13:10:49.738Z",
+            "modified": "2023-06-05T13:58:34.038Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "58042b30-8c58-414f-ba19-b1aa1c8442f6",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Get Routes",
+            "url": "http://127.0.0.1:9292/routes",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-06-06T12:23:45.375Z",
+            "modified": "2023-06-06T12:24:20.783Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "87c4968b-6731-4541-8c70-6735041b8fcf",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Add Routes",
+            "url": "http://127.0.0.1:9292/routes/addroute",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-06-06T14:01:37.407Z",
+            "modified": "2023-06-07T08:05:49.178Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Ngong Hills Windmills"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Are you ready for breathtaking views of the hills where you can literally touch the clouds? Well this is definitely the route for you. It has beautiful scenery with amazing and breathtaking views"
+                    },
+                    {
+                        "name": "distance",
+                        "value": "22km"
+                    },
+                    {
+                        "name": "time",
+                        "value": "5 hrs"
+                    },
+                    {
+                        "name": "level_of_difficulty",
+                        "value": "Moderate"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "1ac324a0-671d-4035-bbed-61dfafcde6a0",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "Edit Route",
+            "url": "http://127.0.0.1:9292/routes/editroute/1",
+            "method": "PATCH",
+            "sortNum": 100000,
+            "created": "2023-06-06T14:26:54.615Z",
+            "modified": "2023-06-06T14:27:58.189Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Githokoboni trek"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Has a waterfall. Is a smooth trail with beautiful scenery and breathtaking views."
+                    },
+                    {
+                        "name": "distance",
+                        "value": "10km"
+                    },
+                    {
+                        "name": "time",
+                        "value": "3 hrs"
+                    },
+                    {
+                        "name": "level_of_difficulty",
+                        "value": "Easy"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f93f1f72-810c-410b-bd02-b63e15d594f5",
+            "colId": "a08bc75d-523c-4c80-b844-36b87e6dbfdc",
+            "containerId": "",
+            "name": "DELETE ROUTE",
+            "url": "http://127.0.0.1:9292/routes/editroute/1",
+            "method": "PATCH",
+            "sortNum": 110000,
+            "created": "2023-06-06T14:29:25.867Z",
+            "modified": "2023-06-06T14:29:25.867Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Githokoboni trek"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Has a waterfall. Is a smooth trail with beautiful scenery and breathtaking views."
+                    },
+                    {
+                        "name": "distance",
+                        "value": "10km"
+                    },
+                    {
+                        "name": "time",
+                        "value": "3 hrs"
+                    },
+                    {
+                        "name": "level_of_difficulty",
+                        "value": "Easy"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}

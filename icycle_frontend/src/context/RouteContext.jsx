@@ -18,13 +18,15 @@ export function RouteProvider({children}){
 
         if(data.success){
             alert(data.success)
+            nav("/routes")
+            window.location.reload()
         }else if(data.error){
             alert(data.error)
         }else{
             alert("All fields are required")
         }
     })
-    nav("/")
+   
   }
 
   // Delete a Route
@@ -36,6 +38,7 @@ export function RouteProvider({children}){
       }, 
     })
     nav("/routes")
+    window.location.reload()
   }
 
   // fetch the data from the routes in the backend

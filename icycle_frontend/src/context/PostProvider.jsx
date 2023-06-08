@@ -20,55 +20,53 @@ export function PostProvider({children}){
     .then((data) =>{
         if(data.success){
             alert(data.success)
+            nav("/feed")
+            window.location.reload()
         }else if(data.error){
             alert(data.error)
         }else{
             alert("All fields are required")
         }
     })
-    nav("/")
+    
   }
 
   // Edit Post
-  
   function editPost(id,title, description, distance, time, image_url) {
-      const updatedData = { title, description, distance, time, image_url };
     fetch(`posts/editpost/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData)
+      body: JSON.stringify({
+        title:title,
+        description: description,
+        distance: distance,
+        time: time,
+        image_url: image_url
+      }),
     })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
           alert(data.success);
-        } else if (data.error) {
-          alert(data.error);
-        } else {
-          alert("All fields are required");
-        }
-        addPost()
+          nav("/feed")
+          window.location.reload();
+         }
+    
       });
   }
 
-//   Delete a post
-function handleDelete(id){
-    fetch(`/posts/delete/${id}`,{
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      }, 
-    })
-    .then(response => response.json)
-    .then(response => {
-      if(response.success){
-        alert(response.success)
-      }else if(response.error){
-        alert(response.error)
-      }
-    })
-    nav("/")
-  }
+ // Delete a Route
+ function handleDelete(id){
+  fetch(`/posts/delete/${id}`,{
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    }, 
+  })
+  nav("/feed")
+  window.location.reload()
+}
+
   // fetch the data from the routes in the backend
   useEffect(()=>{
     fetch("/posts")
