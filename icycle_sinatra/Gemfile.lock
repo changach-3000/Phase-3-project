@@ -103,6 +103,7 @@ DEPENDENCIES
   require_all
   rerun (~> 0.14.0)
   rspec
+  sinatra (~> 3.0, >= 3.0.6)
   sinatra-activerecord
   sqlite3 (~> 1.4)
   thin (~> 1.8, >= 1.8.2)
