@@ -20,9 +20,10 @@ class ApplicationController < Sinatra::Base
         user = User.find_by(id: session[:user_id])
       
         if user.nil? || !user.is_admin?
-          halt 401
-          { error: "User is not authorized to add a post" }.to_json
-          
+          message ={:error=> "User is not authorized to add a post" }
+          halt 401,
+          message.to_json
+                    
         end
       end
 
