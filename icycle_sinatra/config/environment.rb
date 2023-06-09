@@ -10,4 +10,5 @@ configure do
         database: "db/development.sqlite3"
     }
 end
+
 require_all "app"

@@ -12,7 +12,7 @@ export function AuthProvider({children}){
 
     // Login function
     const login = (username,password) => {
-        fetch("/auth/login",{
+        fetch("https://icycle-np02.onrender.com/auth/login",{
             method: "POST",
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({username,password})
@@ -26,15 +26,13 @@ export function AuthProvider({children}){
             alert(response.success)
             nav('/feed')
             window.location.reload()
-             }
-            
+             }  
         })
-       
     }
 
     // Login function
     const signup = (username,email,password) => {
-        fetch("/users/adduser",{
+        fetch("https://icycle-np02.onrender.com/users/adduser",{
             method: "POST",
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({username,email,password})
@@ -55,7 +53,7 @@ export function AuthProvider({children}){
 
      // Logout
      const logout = () =>{
-        fetch("/auth/logout", {
+        fetch("https://icycle-np02.onrender.com/auth/logout", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
         })
@@ -72,7 +70,7 @@ export function AuthProvider({children}){
 
     // fetch current user
     useEffect(()=>{
-        fetch("/currentuser",{
+        fetch("https://icycle-np02.onrender.com/currentuser",{
             method: "GET",
             headers: {"Content-Type": "application/json"}, 
         })

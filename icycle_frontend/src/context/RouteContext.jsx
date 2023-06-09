@@ -8,7 +8,7 @@ export function RouteProvider({children}){
   const nav = useNavigate()
 
   function addRoute(name,description,distance,time,level_of_difficulty){
-    fetch("/routes/addroute",{
+    fetch("https://icycle-np02.onrender.com/routes/addroute",{
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
         body: JSON.stringify({name, description,distance,time,level_of_difficulty})
@@ -31,7 +31,7 @@ export function RouteProvider({children}){
 
   // Delete a Route
   function handleDelete(id){
-    fetch(`/routes/delete/${id}`,{
+    fetch(`https://icycle-np02.onrender.com/routes/delete/${id}`,{
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export function RouteProvider({children}){
 
   // fetch the data from the routes in the backend
   useEffect(()=>{
-    fetch("/routes")
+    fetch("https://icycle-np02.onrender.com/routes")
     .then(res => res.json())
     .then(data =>{
       setRoutes(data)

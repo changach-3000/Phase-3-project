@@ -13,7 +13,7 @@ export function PostProvider({children}){
   const [singlepost, setSinglepost] = useState(" ")
 
   function addPost(title, description,distance,time,image_url){
-    fetch("/posts/addpost",{
+    fetch("https://icycle-np02.onrender.com/posts/addpost",{
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
         body: JSON.stringify({title, description,distance,time,image_url})
@@ -33,7 +33,7 @@ export function PostProvider({children}){
 
   // Edit Post
   function editPost(title, description, distance, time, image_url) {
-    fetch(`posts/editpost/${id}`, {
+    fetch(`https://icycle-np02.onrender.com/posts/editpost/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -56,7 +56,7 @@ export function PostProvider({children}){
 
  // Delete a Route
  function handleDelete(id){
-  fetch(`/posts/delete/${id}`,{
+  fetch(`https://icycle-np02.onrender.com/posts/delete/${id}`,{
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export function PostProvider({children}){
 
   // fetch the data from the routes in the backend
   useEffect(()=>{
-    fetch("/posts")
+    fetch("https://icycle-np02.onrender.com/posts")
     .then(res => res.json())
     .then(data =>{
       setPosts(data)
@@ -78,7 +78,7 @@ export function PostProvider({children}){
   // fetch single post
   const {id} = useParams()
   useEffect(()=>{
-    fetch(`/posts/${id}`)
+    fetch(`https://icycle-np02.onrender.com/posts/${id}`)
     .then(res => res.json())
     .then(data =>{
       setSinglepost(data)
