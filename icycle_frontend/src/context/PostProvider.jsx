@@ -5,6 +5,8 @@ export const PostContext = createContext()
 
 export function PostProvider({children}){
   const nav = useNavigate()
+ 
+  
   // create route state
 
   const [posts ,setPosts] = useState()
@@ -25,13 +27,12 @@ export function PostProvider({children}){
         }else if(data.error){
             alert(data.error)
         }
-
     })
     
   }
 
   // Edit Post
-  function editPost(id,title, description, distance, time, image_url) {
+  function editPost(title, description, distance, time, image_url) {
     fetch(`posts/editpost/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -50,7 +51,6 @@ export function PostProvider({children}){
           nav("/feed")
           window.location.reload();
          }
-    
       });
   }
 

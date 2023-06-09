@@ -36,7 +36,9 @@ function Feed() {
                         currentuser && currentuser.id === post.user_id ?
                         <>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <NavLink to={`editpost/{$id}`}><button type="button" class="btn btn-outline-warning">Edit</button></NavLink>
+                        <NavLink to={`editpost/${post.id}`}>
+                        <button type="button" className="btn btn-outline-warning" onClick={()=>{}}>Edit</button>
+                      </NavLink>
                         <button type="button" class="btn btn-outline-danger" onClick={()=>{handleDelete(post.id)}}>Delete </button>
                         </div>   
                         </>:" "

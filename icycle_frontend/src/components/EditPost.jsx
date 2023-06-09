@@ -5,8 +5,6 @@ import { PostContext } from "../context/PostProvider";
 
 function EditItem() {
   const {editPost, addPost} = useContext(PostContext);
-  const{id}=useParams()
-  
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
